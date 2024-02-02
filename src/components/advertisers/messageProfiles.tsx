@@ -10,9 +10,8 @@ export default function MessageProfiles() {
   const profiles = useAppSelector((state) => state.user.slice().sort((a,b)=>{
     if(a.recentMessage===null) return 1;
     if(b.recentMessage===null) return -1;
-    if(a.recentMessage.time > b.recentMessage.time)
-      return 1;
-    return -1;
+    if (a.recentMessage.time > b.recentMessage.time) return -1;
+    else return 1;
   }));
   const dispatch = useAppDispatch();
   const bot=profiles.filter((user) => user.gender==="bot");
