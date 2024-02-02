@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { addNewMessage } from "~/store/user";
 import { useAppDispatch, useAppSelector } from "~/store";
 import { useSession } from "next-auth/react";
@@ -77,14 +77,14 @@ export default function Bot({ messages }: { messages: Message[] }) {
     }
   }, [dispatch, userName, sessionData, messages, profiles, loaded]);
   return (
-    <div className="m-4">
+    <div className="m-4 relative -top-4 overflow-scroll max-h-60 md:max-h-fit">
       {recommendations.length !== 0 && (
         <div
-          className={`rounded-3xl flex w-full flex-col space-y-2 place-self-end bg-gray-300 pb-5 pl-12 pt-5 text-sm`}
+          className={`rounded-3xl flex w-full flex-col space-y-2 place-self-end bg-gray-300 pb-5 pl-3 md:pl-12 pt-5 text-sm`}
         >
           {recommendations.map((val, i) => (
             <button
-              className={`w-2/5 break-words rounded-xl bg-gray-200 p-4 text-black hover:bg-gray-400`}
+              className={`w-4/5 md:w-2/5 break-words rounded-xl bg-gray-200 p-4 py-2 text-black hover:bg-gray-400`}
               key={i}
               onClick={() => {
                 dispatch(
@@ -109,12 +109,12 @@ export default function Bot({ messages }: { messages: Message[] }) {
       )}
       {options.length !== 0 && (
         <div
-          className={`rounded-3xl flex mt-2 w-full flex-row-reverse place-self-end bg-gray-50 pb-5 pr-10 pt-5 text-sm`}
+          className={`rounded-3xl flex mt-2 w-full flex-row-reverse place-self-end bg-gray-50 pb-5 pr-3 md:pr-10 pt-5 text-sm`}
         >
-          <div className="w-2/5 space-y-2">
+          <div className="w-4/5 md:w-2/5 space-y-2">
             {options.map((val, i) => (
               <button
-                className={`w-full break-words rounded-xl bg-gray-500 p-4 text-gray-300 hover:bg-gray-800`}
+                className={`w-full break-words rounded-xl bg-gray-500 p-4 py-2.5 text-gray-300 hover:bg-gray-800`}
                 onClick={() => {
                   dispatch(
                     addNewMessage({

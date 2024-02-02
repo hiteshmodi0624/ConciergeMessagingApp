@@ -15,7 +15,7 @@ export default function NavButton({
     >
       <Link
         href={href}
-        className="text-3xl font-bold text-white duration-200 sm:text-2xl"
+        className="text-xl md:text-3xl font-bold text-white duration-200 sm:text-2xl"
       >
         {icon}
       </Link>

@@ -12,7 +12,7 @@ export default function Messaging() {
         <meta name="description" content="Concierge Messaging App" />
       </Head>
       <Provider store={store}>
-        <main className="from-secondary to-primary flex max-h-screen items-center bg-gradient-to-b">
+        <main className="from-secondary to-primary flex flex-col-reverse md:flex-row h-screen items-center bg-gradient-to-b">
           <Navbar />
           <Advertisers className="flex w-full md:!w-1/3"/>
           <Chats className="hidden md:flex"/>

@@ -32,8 +32,8 @@ export default function ChatInput({ id }: { id: number }) {
 
   return (
     <div
-      className="border-seperator fixed bottom-4 m-2 flex h-min items-center 
-  space-x-2 rounded-full border-[1px] bg-transparent px-4 sm:relative"
+      className="w-11/12 place-self-end md:bottom-4 flex h-min items-center 
+  space-x-2 rounded-full border-[1px] bg-transparent px-4 sm:relative mx-auto"
     >
       {/* <div className="left-icons flex space-x-1 text-xl">
         <MdPhoto />

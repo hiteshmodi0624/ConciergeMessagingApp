@@ -15,7 +15,7 @@ export default function Chats({ className }: { className?: string }) {
     else return false;
   });
   return (
-    <div className={`h-screen flex-1 bg-[#EFF3F6] ${className}`}>
+    <div className={`h-[calc(100vh-56px)] w-full md:h-screen flex-1 bg-[#EFF3F6] ${className}`}>
       {user ? (
         <Chat user={user} />
       ) : (
